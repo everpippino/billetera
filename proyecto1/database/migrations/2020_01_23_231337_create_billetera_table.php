@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePerfilTable extends Migration
+class CreateBilleteraTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreatePerfilTable extends Migration
      */
     public function up()
     {
-        Schema::create('perfil', function (Blueprint $table) {
+        Schema::create('billetera', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre',50);
-            $table->string('descripcion');
+            $table->string('nombre');
+            $table->float('balance');
+            $table->float('total_credito');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreatePerfilTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('perfil');
+        Schema::dropIfExists('billetera');
     }
 }
