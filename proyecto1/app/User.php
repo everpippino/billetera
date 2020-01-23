@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'perfil_id', 'billetera_id'
     ];
 
     /**
@@ -26,4 +26,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function perfil(){
+        //Relacion de muchos usuarios de un perfil
+        return $this->belongsTo('App\Perfil');
+      }
+      public function billetera(){
+        //Relacion de un usuario a una billetera
+        return $this->hasOne('App\Billetera');
+      }
 }
