@@ -19,7 +19,6 @@ class CreateBilleteraTable extends Migration
             $table->float('balance');
             $table->float('total_credito');
             $table->integer('dolar_id');
-            $table->integer('user_id');
             $table->timestamps();
         });
     }
