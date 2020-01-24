@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBilleteraTable extends Migration
+class CreateCategoriaGTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateBilleteraTable extends Migration
      */
     public function up()
     {
-        Schema::create('billetera', function (Blueprint $table) {
+        Schema::create('categoria_g', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
-            $table->float('balance');
-            $table->float('total_credito');
-            $table->integer('dolar_id');
-            $table->integer('user_id');
             $table->timestamps();
         });
     }
@@ -31,6 +26,6 @@ class CreateBilleteraTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('billetera');
+        Schema::dropIfExists('categoria_g');
     }
 }
